@@ -33,11 +33,9 @@ function printShape(shape, height, character) {
       }
       break;
     case 'Tryangle':
+      line = ''
       for (let i = 0; i < height; i++) {
-        line = ''
-        for (let j = 0; j < i + 1; j++) {
-          line += character
-        }
+        line += character
         console.log(line)
       }
       break;
