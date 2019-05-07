@@ -16,7 +16,7 @@ let stringsToTest = [
 
 stringsToTest.forEach(string => {
   console.log(`the string ${string},
-  is a rigid palendrom: ${isPalindrome(string)}.
-  It is a palendrome ignoring capitols and spaces: ${isPalindrome2(string)}
+  is a rigid palindrom: ${isPalindrome(string)}.
+  It is a palindrome ignoring capitols and spaces: ${isPalindrome2(string)}
   `)
 })
