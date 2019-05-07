@@ -24,18 +24,18 @@ function printShape(shape, height, character) {
   let line
   switch (shape) {
     case 'Square':
-      for(let i = 0; i < height; i++) {
-        line = ''
-        for(let j = 0; j < height; j++) {
-          line += character
-        }
+      line = ''
+      for (let j = 0; j < height; j++) {
+        line += character
+      }
+      for (let i = 0; i < height; i++) {
         console.log(line)
       }
       break;
     case 'Tryangle':
-      for(let i = 0; i < height; i++) {
+      for (let i = 0; i < height; i++) {
         line = ''
-        for(let j = 0; j < i + 1; j++) {
+        for (let j = 0; j < i + 1; j++) {
           line += character
         }
         console.log(line)
@@ -43,9 +43,9 @@ function printShape(shape, height, character) {
       break;
     case 'Diamond':
       let disp = Math.ceil(height / 2)
-      for(let i = 0; i <= height; i++) {
+      for (let i = 0; i <= height; i++) {
         line = ''
-        for(let j = 0; j <= height; j++) {
+        for (let j = 0; j <= height; j++) {
           line += Math.abs(i - disp) + Math.abs(j - disp) < disp ? character : ' '
         }
         console.log(line)
