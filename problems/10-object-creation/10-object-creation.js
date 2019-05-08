@@ -9,12 +9,12 @@ people.push({
   age: NaN
 })
 
-function makePerson(name, age) {
+function MakePerson(name, age) {
   this.name = name
   this.age = age
 }
 
-people.push(new makePerson('Captain Swab', 31))
+people.push(new MakePerson('Captain Swab', 31))
 
 class Person {
   constructor(name, age) {

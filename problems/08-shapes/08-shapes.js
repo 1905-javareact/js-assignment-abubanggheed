@@ -21,10 +21,9 @@ Example for printShape("Diamond", 5, "*");
   * 
 */
 function printShape(shape, height, character) {
-  let line
+  let line = ''
   switch (shape) {
     case 'Square':
-      line = ''
       for (let j = 0; j < height; j++) {
         line += character
       }
@@ -33,18 +32,18 @@ function printShape(shape, height, character) {
       }
       break;
     case 'Tryangle':
-      line = ''
       for (let i = 0; i < height; i++) {
         line += character
         console.log(line)
       }
       break;
     case 'Diamond':
-      let disp = Math.ceil(height / 2)
+      let centerIndex = Math.ceil(height / 2)
       for (let i = 0; i <= height; i++) {
         line = ''
         for (let j = 0; j <= height; j++) {
-          line += Math.abs(i - disp) + Math.abs(j - disp) < disp ? character : ' '
+          line += (Math.abs(i - centerIndex) + Math.abs(j - centerIndex) < centerIndex) ?
+          character : ' '
         }
         console.log(line)
       }
@@ -56,27 +55,27 @@ function printShape(shape, height, character) {
 
 let shapes = [
   {
-    shp: 'Square',
+    type: 'Square',
     height: 4,
     char: 'ii'
   },
   {
-    shp: 'Tryangle',
+    type: 'Tryangle',
     height: 8,
     char: ','
   },
   {
-    shp: 'Diamond',
+    type: 'Diamond',
     height: 5,
     char: '!'
   },
   {
-    shp: 'Diamond',
+    type: 'Diamond',
     height: 7,
     char: 'b'
   },
 ]
 
 shapes.forEach(shape => {
-  printShape(shape.shp, shape.height, shape.char)
+  printShape(shape.type, shape.height, shape.char)
 })

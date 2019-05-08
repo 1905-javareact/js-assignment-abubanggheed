@@ -10,13 +10,13 @@ function spliceElement(someArr, index) {
 }
 
 let testArrays = [
-  {ary: [0, 1, 2, 3, 4, 5], toRemove: 2},
-  {ary: [0], toRemove: 3},
-  {ary: [0, 1, 2, 3], toRemove: 3}
+  {data: [0, 1, 2, 3, 4, 5], toSplice: 2},
+  {data: [0], toSplice: 3},
+  {data: [0, 1, 2, 3], toSplice: 3}
 ]
 
-testArrays.forEach(array => {
-  console.log('before', array.ary)
-  spliceElement(array.ary, array.toRemove)
-  console.log('after', array.ary)
+testArrays.forEach(arrayToTest => {
+  console.log('before', arrayToTest.data)
+  spliceElement(arrayToTest.data, arrayToTest.toSplice)
+  console.log('after', arrayToTest.data)
 })

@@ -2,15 +2,15 @@
 Define function: fib(n) 
 Return the nth number in the fibonacci sequence. */
 function fib(n) {
-    let a = 0
-    let b = 0
-    let ret = 0
+    let previousValue = 0
+    let lastValue = 0
+    let toReturn = 0
     for(let i = 0; i < n; i++) {
-        ret = b + a || 1
-        a = b
-        b = ret
+        toReturn = lastValue + previousValue || 1
+        previousValue = lastValue
+        lastValue = toReturn
     }
-    return ret
+    return toReturn
     // this is much faster than the recursive solution
 }
 
