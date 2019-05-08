@@ -7,6 +7,11 @@ function substring(someStr, startIndex, endIndex) {
   // the guard operator does not work here
   if (typeof (someStr) !== 'string') {
     throw 'you must input a string'
+  } else if (startIndex >= someStr.length) {
+    throw 'your starting index must be in range of the input string'
+  } else if (endIndex < startIndex) {
+    throw `cannot find stubstring over a negative interval.
+    Try reversing your second and third parameters.`
   }
   let returnString = ''
   for (let i = startIndex; i < endIndex && i < someStr.length; i++) {
@@ -30,6 +35,16 @@ let toTry = [
     str: () => {},
     start: 1,
     end: 5
+  },
+  {
+    str: '',
+    start: 3,
+    end: 3
+  },
+  {
+    str: 'go',
+    start: 1,
+    end: 0
   }
 ]
 
