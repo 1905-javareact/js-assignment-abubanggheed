@@ -5,12 +5,14 @@ If incorrect input is entered, throw an exception stating the input was incorrec
 For example substring('hello', 0, 3) should give 'hel' */
 function substring(someStr, startIndex, endIndex) {
   // the guard operator does not work here
-  if (typeof (someStr) !== 'string') {
+  if (arguments.length < 3) {
+    throw 'substring must be called with at least 3 arguments'
+  } else if (typeof (someStr) !== 'string') {
     throw 'you must input a string'
   } else if (startIndex >= someStr.length) {
     throw 'your starting index must be in range of the input string'
   } else if (endIndex < startIndex) {
-    throw `cannot find stubstring over a negative interval.
+    throw `cannot find a substring over a negative interval.
     Try reversing your second and third parameters.`
   }
   let returnString = ''
@@ -56,3 +58,8 @@ toTry.forEach(input => {
     console.log(`for an input of`, input, `we got an error of "${error}"`)
   }
 })
+try {
+  substring('a', 0)
+} catch (error) {
+  console.log(`when given less that 3 arguments, we get an error of "${error}"`)
+}
