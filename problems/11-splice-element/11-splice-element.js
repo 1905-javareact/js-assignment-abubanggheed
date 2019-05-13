@@ -3,10 +3,12 @@ Define function spliceElement(someArr, index)
 Splice the element at the provided index in the array.
 */
 function spliceElement(someArr, index) {
+  let returnValue = someArr[index]
   for(let i = index; i < someArr.length; i++) {
     someArr[i] = someArr[i + 1]
   }
   index < someArr.length && someArr.pop()
+  return [returnValue]
 }
 
 let testArrays = [
@@ -17,6 +19,6 @@ let testArrays = [
 
 testArrays.forEach(arrayToTest => {
   console.log('before', arrayToTest.data)
-  spliceElement(arrayToTest.data, arrayToTest.toSplice)
+  console.log('splicing', spliceElement(arrayToTest.data, arrayToTest.toSplice))
   console.log('after', arrayToTest.data)
 })
